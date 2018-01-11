@@ -6,10 +6,13 @@ const CommentContainer = styled.div`
 display: flex;
 justify-content: flex-start;
 align-items: center;
+font-family: "Open Sans";
+z-index:999;
+
 img{
-  height: 20px;
-  width: 20px;
-  border-radius: 100%;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
   margin: 8px;
 }
 `
