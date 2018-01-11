@@ -4,12 +4,14 @@ import { FaHeartO, FaCommentO } from 'react-icons/lib/fa'
 
 import styled from 'styled-components'
 
-const Container=styled.div`
+const input = `@import("https://fonts.googleapis.com/css?family=Lato" rel="stylesheet");`
+
+const Container = styled.div`
 display: flex;
 flex-direction:column;
 justify-content: flex-start;
 align-items: space-between;
-
+font-family: 'Lato', sans-serif;
 background: rgb(247, 247, 247);
 width: 100vw;
 height:100vh;
@@ -28,7 +30,6 @@ display: block;
 border-radius: 3px;
 border: 1px solid #e6e6e6;
 background: rgb(250, 250, 250);
-font-family: "Open Sans";
 z-index:0;
 `
 
@@ -36,7 +37,7 @@ const PostTop = styled.div`
 display: flex;
 align-items: center;
 /* padding:10px; */
-font-family: "Open Sans";
+
 z-index:1;
 width: 95vw;
 max-width: 600px;
@@ -48,24 +49,30 @@ img{
   border-radius: 50%;
   margin: 8px;
 }
-`
+p{
+  padding-left: 5px;
+  font-weight: bold;}
+  `
 
 const PostMiddle = styled.div`
 display: block;
-width:600px;
-z-index:1;
+width: 600px;
+z - index: 1;
 img{
- 
+
   width: 600px;
-  
+
 }
 `
 
 const PostBottom = styled.div`
-font-family: "Open Sans";
-width:600px;
+width: 600px;
 /* padding: 5px; */
-align-text:center;
+align - text: center;
+
+p{
+  padding-left: 5px;
+  font-weight: bold;}
 `
 
 
@@ -88,11 +95,10 @@ class Post extends Component{
         <PostBottom>
           <FaHeartO />
           <FaCommentO />
-         
-         
         <p>{post.likes.length} likes</p>
-        {post.comments.map((comment,i) => <Comment key={i} comment={comment}/>)}
         </PostBottom>
+        {post.comments.map((comment,i) => <Comment key={i} comment={comment}/>)}
+       
       </PostContainer>
       </Container>
     )
